@@ -1,9 +1,9 @@
 def acceleration_serializer(acceleration) -> dict:
     return {
         "id": acceleration["int_id"],
-        "x": acceleration["x"],
-        "y": acceleration["y"],
-        "z": acceleration["z"],
+        "acc_x": acceleration["acc_x"],
+        "acc_y": acceleration["acc_y"],
+        "acc_z": acceleration["acc_z"],
         "time": str(acceleration["time"])   
     }
 
@@ -18,9 +18,9 @@ def environment_serializer(environ_info) -> dict:
 def gyroscope_serializer(orientation) -> dict:
     return {
         "id": orientation["int_id"],
-        "x": orientation["x"],
-        "y": orientation["y"],
-        "z": orientation["z"],
+        "gyr_x": orientation["gyr_x"],
+        "gyr_y": orientation["gyr_y"],
+        "gyr_z": orientation["gyr_z"],
         "time": str(orientation["time"]),   
     }
 

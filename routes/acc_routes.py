@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
 from config.database import accelerometer_collection
-from models.api_model import Accelerometer, Gyroscope, Environment
-from schemas.api_schema import environment_serializer, environments_serializer, gyroscope_serializer, gyroscopes_serializer, acceleration_serializer, accelerations_serializer
+from models.api_model import Accelerometer
+from schemas.api_schema import acceleration_serializer, accelerations_serializer
 #from bson import ObjectId
 
 
