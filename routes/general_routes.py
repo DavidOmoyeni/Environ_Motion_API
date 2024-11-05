@@ -7,7 +7,8 @@ from schemas.api_schema import acceleration_serializer, gyroscope_serializer, en
 # Unified API Router
 general_api_router = APIRouter()
 
-@general_api_router.post("/api/general")
+# Post general
+@general_api_router.post("/api/general/")
 async def post_general_data(data: GeneralData):
     responses = {}
     

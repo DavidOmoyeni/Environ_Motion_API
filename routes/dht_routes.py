@@ -7,7 +7,7 @@ from schemas.api_schema import environment_serializer, environments_serializer
 environment_api_router = APIRouter()
 
 # Retrieve all accelerations
-@environment_api_router.get("/api/environment")
+@environment_api_router.get("/api/environment/")
 async def get_environ_infos():
     environ_infos = environments_serializer(dht_collection.find({}, {"_id": 0}))
     return {"status": "ok", "data": environ_infos}
@@ -22,7 +22,7 @@ async def get_environ_info(int_id: int):
 
     
 # Post a new acceleration entry
-@environment_api_router.post("/api/environment")
+@environment_api_router.post("/api/environment/")
 async def post_orientation(environ_info: Environment):
     # Convert to dictionary and add an integer ID
     environ_info_data = dict(environ_info)

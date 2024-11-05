@@ -7,7 +7,7 @@ from schemas.api_schema import gyroscope_serializer, gyroscopes_serializer
 orientation_api_router = APIRouter()
 
 # Retrieve all accelerations
-@orientation_api_router.get("/api/orientation")
+@orientation_api_router.get("/api/orientation/")
 async def get_orientations():
     orientations = gyroscopes_serializer(gyroscope_collection.find({}, {"_id": 0}))
     return {"status": "ok", "data": orientations}
@@ -22,7 +22,7 @@ async def get_orientation(int_id: int):
 
     
 # Post a new acceleration entry
-@orientation_api_router.post("/api/orientation")
+@orientation_api_router.post("/api/orientation/")
 async def post_orientation(orientation: Gyroscope):
     # Convert to dictionary and add an integer ID
     orientation_data = dict(orientation)

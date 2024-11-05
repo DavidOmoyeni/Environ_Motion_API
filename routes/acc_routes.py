@@ -8,7 +8,7 @@ from schemas.api_schema import acceleration_serializer, accelerations_serializer
 acceleration_api_router = APIRouter()
 
 # Retrieve all accelerations
-@acceleration_api_router.get("/api/acceleration")
+@acceleration_api_router.get("/api/acceleration/")
 async def get_accelerations():
     accelerations = accelerations_serializer(accelerometer_collection.find({}, {"_id": 0}))
     return {"status": "ok", "data": accelerations}
@@ -23,7 +23,7 @@ async def get_acceleration(int_id: int):
 
     
 # Post a new acceleration entry
-@acceleration_api_router.post("/api/acceleration")
+@acceleration_api_router.post("/api/acceleration/")
 async def post_acceleration(acceleration: Accelerometer):
     # Convert to dictionary and add an integer ID
     acceleration_data = dict(acceleration)
